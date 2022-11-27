@@ -2,7 +2,7 @@ require './test/test_helper'
 
 class PokemonTest < ActiveSupport::TestCase
   setup do
-    @pokemon = pokemons(:one)
+    @pokemon = pokemons(:bulbasaur)
   end
 
   test 'valid pokemon' do

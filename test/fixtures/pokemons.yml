@@ -1,31 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+bulbasaur:
   number: 1
-  name: MyString
-  type1: MyString
-  type2: MyString
-  total: 1
-  hp: 1
-  attack: 1
-  defense: 1
-  special_attack: 1
-  special_defense: 1
-  speed: 1
+  name: Bulbasaur
+  type1: Grass
+  type2: Poison
+  total: 318
+  hp: 45
+  attack: 49
+  defense: 49
+  special_attack: 65
+  special_defense: 65
+  speed: 45
   generation: 1
   legendary: false
 
-two:
-  number: 1
-  name: MyString
-  type1: MyString
-  type2: MyString
-  total: 1
-  hp: 1
-  attack: 1
-  defense: 1
-  special_attack: 1
-  special_defense: 1
-  speed: 1
+ivysaur:
+  number: 2
+  name: Ivysaur
+  type1: Grass
+  type2: Poison
+  total: 405
+  hp: 60
+  attack: 62
+  defense: 63
+  special_attack: 80
+  special_defense: 80
+  speed: 60
   generation: 1
   legendary: false
