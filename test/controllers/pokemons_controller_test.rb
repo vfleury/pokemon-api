@@ -16,15 +16,12 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create pokemon" do
-    pokemon_count_before = Pokemon.count
-    post pokemons_url, params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, number: @pokemon.number, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type1: @pokemon.type1, type2: @pokemon.type2 } }, as: :json
-    pokemon_count_after = Pokemon.count
+    assert_difference("Pokemon.count") do
+      post pokemons_url, params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, number: @pokemon.number, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type1: @pokemon.type1, type2: @pokemon.type2 } }, as: :json
+    end
 
     assert_response :created
-    assert_equal pokemon_count_before + 1, pokemon_count_after
-
-    last_pokemon = Pokemon.last
-    assert_equal pokemons(:bulbasaur).name, last_pokemon.name
+    assert_equal pokemons(:bulbasaur).name, Pokemon.last.name
   end
 
   test "should show pokemon" do
